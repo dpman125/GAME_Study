@@ -16,7 +16,7 @@ public class gameManager : MonoBehaviour
         // Wait for the specified seconds
         yield return new WaitForSeconds(delayInSeconds);
 
-        Instantiate(T_cell);
+        Instantiate(T_cell, this.transform);
         StartCoroutine(SpawnEnemy(spawnRate));
     }
 
