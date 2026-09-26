@@ -4,7 +4,8 @@ using UnityEngine;
 public class t_cellController : MonoBehaviour
 {
 
-    public float enemySpeed = 2;
+    public float enemySpeed = 5;
+    public float attackCooldown = 5;
     private GameObject player;
     Rigidbody2D rb;
 
@@ -37,7 +38,12 @@ public class t_cellController : MonoBehaviour
 
     IEnumerator DestroyTcell(float lifespan)
     {
-        yield return new WaitForSeconds(1000);
+        for (int i = 0; i < 10; i++)
+        {
+            yield return new WaitForSeconds(attackCooldown);
+            rb.AddForce(player.transform.position.normalized * enemySpeed, ForceMode2D.Impulse);
+        }
+
         Destroy(gameObject);
     }
 }
