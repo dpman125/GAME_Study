@@ -17,6 +17,7 @@ public class t_cellController : MonoBehaviour
 
         float randx = (Random.value * (enemySpeed * 2)) - enemySpeed;
         float randy = (Random.value * (enemySpeed * 2)) - enemySpeed;
+
         rb = GetComponent<Rigidbody2D>();
         rb.AddForce(player.transform.position.normalized * enemySpeed, ForceMode2D.Impulse);
         StartCoroutine(DestroyTcell(lifespan));
@@ -25,6 +26,7 @@ public class t_cellController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
