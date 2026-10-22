@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 [System.Serializable]
 public class Dialogue
@@ -8,5 +7,5 @@ public class Dialogue
 
     [TextArea(3, 10)]
     public string[] sentences;
-    public Image profile;
+    public Sprite profile;
 }

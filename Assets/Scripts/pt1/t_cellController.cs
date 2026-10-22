@@ -37,7 +37,6 @@ public class t_cellController : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
     IEnumerator DestroyTcell(float lifespan)
     {
         for (int i = 0; i < 10; i++)

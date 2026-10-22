@@ -643,57 +643,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &555112316
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 555112318}
-  - component: {fileID: 555112317}
-  m_Layer: 0
-  m_Name: Timmy
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &555112317
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 555112316}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce99abd7e1ae48a42be8118b7db931af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DialogueEditor
-  dialogue:
-    name: Timmy
-    sentences:
-    - Not verry Well. I have been feeling very tired a lot. I haven't been hungry
-      for my favorite foods, and I feel woozy every day.
-    - 
-    profile: {fileID: 0}
---- !u!4 &555112318
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 555112316}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 837.79254, y: 460.37866, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &629258285
 GameObject:
   m_ObjectHideFlags: 0
@@ -977,11 +926,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce99abd7e1ae48a42be8118b7db931af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueEditor
-  dialogue:
-    name: Dr. Pav
-    sentences:
-    - Nice to meet you Timmy! How are you feeling today?
-    - Oh is that so? Let me take a closer look.
+  dialoguePav:
+    name: 
+    sentences: []
+    profile: {fileID: 0}
+  dialogueKid:
+    name: 
+    sentences: []
+    profile: {fileID: 0}
+  dialogueParent:
+    name: 
+    sentences: []
     profile: {fileID: 0}
 --- !u!1 &1040898149
 GameObject:
@@ -1120,56 +1075,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1040898149}
   m_CullTransparentMesh: 1
---- !u!1 &1188082108
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1188082110}
-  - component: {fileID: 1188082109}
-  m_Layer: 0
-  m_Name: Dr. Pav
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1188082109
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1188082108}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce99abd7e1ae48a42be8118b7db931af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DialogueEditor
-  dialogue:
-    name: Dr. Pav
-    sentences:
-    - Nice to meet you Timmy! How are you feeling today?
-    - Nice to meet you Timmy! How are you feeling today?
-    profile: {fileID: 0}
---- !u!4 &1188082110
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1188082108}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 837.79254, y: 460.37866, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1231388851
 GameObject:
   m_ObjectHideFlags: 0
@@ -1180,6 +1085,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1231388853}
   - component: {fileID: 1231388852}
+  - component: {fileID: 1231388854}
   m_Layer: 0
   m_Name: DialogueManager
   m_TagString: Untagged
@@ -1199,6 +1105,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cafa5eb62403dcf44a6d9427dcacf6c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
+  sentences: []
+  name: {fileID: 0}
+  dialogueText: {fileID: 0}
+  profile: {fileID: 0}
 --- !u!4 &1231388853
 Transform:
   m_ObjectHideFlags: 0
@@ -1214,6 +1124,56 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1231388854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231388851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce99abd7e1ae48a42be8118b7db931af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueEditor
+  dialoguePav:
+    name: Dr. Pav
+    sentences:
+    - 'Hello Timmy, My name is Dr. Pav and I will be working with you today; how
+      we feeling today?
+
+'
+    - 'Huh, chart here says you collapsed during soccer practice?
+
+'
+    - Have you often feel lightheaded and nauseous in recent months?
+    - How often would you say you go to the bathroom?
+    - On average?
+    - In a day?
+    - Hmm. Interesting, Could I see your finger Timmy? I would like to collect a
+      small sample of your blood.
+    - "We\u2019ll you wanna get a good look at what\u2019s going on with you, right?"
+    - Hm, what if we just do a practice run, so you can see what I will be doing
+      to collect a blood sample?
+    profile: {fileID: -625310335, guid: 9a8bf3aa13c73474a9b0d3d61d84312e, type: 3}
+  dialogueKid:
+    name: 
+    sentences:
+    - "Uhh, alright\u2026 a little woozy.."
+    - "\u2026I play hard"
+    - Sorta. I've been feeling sick almost every day.
+    - "Uhhh, I don\u2019t know. Different every day."
+    - Maybe five to eight times.
+    - During School and practice.. mostly.
+    - "You\u2019re not gonna prick it are you?"
+    - "Yeah but- Doc there\u2019s gotta be a better way without pricking me with
+      a needle!"
+    - Practice run? Uhh, yeah sure.
+    profile: {fileID: -1908978240, guid: 803a7dc6b3c2f8649a12941a58d5884c, type: 3}
+  dialogueParent:
+    name: 
+    sentences: []
+    profile: {fileID: 0}
 --- !u!1 &1382381680
 GameObject:
   m_ObjectHideFlags: 0
@@ -1397,7 +1357,7 @@ GameObject:
   - component: {fileID: 1479726705}
   - component: {fileID: 1479726704}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Continue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1466,7 +1426,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1479726705}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1231388852}
+        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
+        m_MethodName: DisplayNextSentence
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1479726705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1822,5 +1794,3 @@ SceneRoots:
   - {fileID: 489430107}
   - {fileID: 244451153}
   - {fileID: 1231388853}
-  - {fileID: 1188082110}
-  - {fileID: 555112318}
