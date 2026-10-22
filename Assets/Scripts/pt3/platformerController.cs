@@ -13,6 +13,7 @@ public class platformerController : MonoBehaviour
     public float jumpForce;
     public int bloodSugar;
     public bool doubleJump;
+    public UIManager UIManager;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -67,7 +68,15 @@ public class platformerController : MonoBehaviour
 
     private void handleEating(food food)
     {
-        bloodSugar += food.sugar;
+        if (food.recipie)
+        {
+
+        }
+        else
+        {
+            bloodSugar += food.sugar;
+        }
+
 
     }
 }

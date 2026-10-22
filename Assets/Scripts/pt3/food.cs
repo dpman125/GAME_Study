@@ -13,13 +13,13 @@ public class food : MonoBehaviour
     public int VmoveSpeed;
     public int HmoveSpeed;
     public bool ready = true;
+    public bool recipie;
     private void Start()
     {
         if (MoveTime != 0)
         {
             StartCoroutine(foodMove());
         }
-
     }
     private void Update()
     {
@@ -32,6 +32,4 @@ public class food : MonoBehaviour
         VmoveSpeed *= -1;
         StartCoroutine(foodMove());
     }
-
-
 }
