@@ -16,8 +16,8 @@ public class MoleculeSpawner : MonoBehaviour
     }
     public void SpawnInsulin()
     {
-        float randomforcex = Random.Range(12f, 8f);
-        float randomforcey = Random.Range(-12f, -8f);
+        float randomforcex = Random.Range(24f, 12f);
+        float randomforcey = Random.Range(-24f, -12f);
         GameObject insulinObj = Instantiate(insulin);
         Rigidbody2D irb = insulinObj.GetComponent<Rigidbody2D>();
         irb.AddForce(new Vector2(randomforcex, randomforcey), ForceMode2D.Impulse);
@@ -28,8 +28,8 @@ public class MoleculeSpawner : MonoBehaviour
     {
         for (int i = 0; i < glucosePerSpawn; i++)
         {
-            float randomforcex = Random.Range(12f, 8f);
-            float randomforcey = Random.Range(-12f, -8f);
+            float randomforcex = Random.Range(24f, 12f);
+            float randomforcey = Random.Range(-24f, -12f);
             GameObject glucoseObj = Instantiate(glucose);
             Rigidbody2D grb = glucoseObj.GetComponent<Rigidbody2D>();
             grb.AddForce(new Vector2(randomforcex, randomforcey), ForceMode2D.Impulse);

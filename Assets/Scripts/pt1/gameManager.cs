@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class gameManager : MonoBehaviour
 {
@@ -18,6 +19,11 @@ public class gameManager : MonoBehaviour
 
         Instantiate(T_cell, this.transform);
         StartCoroutine(SpawnEnemy(spawnRate));
+    }
+
+    public void StartBCS()
+    {
+        SceneManager.LoadScene("BetaCell");
     }
 
 }

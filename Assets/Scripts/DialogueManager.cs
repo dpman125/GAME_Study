@@ -22,6 +22,10 @@ public class DialogueManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Start()
     {
+        if (sceneFlag == 1)
+        {
+            StartDialogue1(dialoguePavG, dialogueKidG, dialogueParentG);
+        }
         sentences = new List<string>();
     }
     public void Update()
@@ -54,8 +58,21 @@ public class DialogueManager : MonoBehaviour
             dialogueKidG = dialogueKid;
             DisplayNextSentence();
         }
+        else if (sceneFlag == 1)
+        {
+            for (int i = 0; i < dialoguePav.sentences.Length; i++)
+            {
+                Enqueue(dialoguePav.sentences[i]);
+                Enqueue(dialogueKid.sentences[i]);
+                Debug.Log("setnence " + i + ": " + dialoguePav.sentences[i]);
+            }
+            dialoguePavG = dialoguePav;
+            dialogueKidG = dialogueKid;
+            DisplayNextSentence();
+        }
 
     }
+
 
     public void DisplayNextSentence()
     {
@@ -97,7 +114,10 @@ public class DialogueManager : MonoBehaviour
         if (sceneFlag == 0)
         {
             StartCoroutine(Transition1());
-
+        }
+        else if (sceneFlag == 1)
+        {
+            StartCoroutine(Transition2());
         }
     }
     public void Enqueue(string sentence)
@@ -113,9 +133,15 @@ public class DialogueManager : MonoBehaviour
     IEnumerator<UnityEngine.WaitForSeconds> Transition1()
     {
         fingerPrick.SetActive(true);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(4f);
 
-        yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("BetaCellUI");
     }
+    IEnumerator<UnityEngine.WaitForSeconds> Transition2()
+    {
+        fingerPrick.SetActive(true);
+        yield return new WaitForSeconds(4f);
+        SceneManager.LoadScene("InsulinUI");
+    }
+
 }

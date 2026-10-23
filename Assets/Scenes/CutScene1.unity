@@ -1976,6 +1976,10 @@ MonoBehaviour:
     - "We\u2019ll you wanna get a good look at what\u2019s going on with you, right?"
     - Hm, what if we just do a practice run, so you can see what I will be doing
       to collect a blood sample?
+    - '*Takes a sample*'
+    - "Oh I\u2019m done. I got what I needed, look at your finger."
+    - "Here is a bandage, and here is what we want to see\u2026"
+    - Of course you can.
     profile: {fileID: -625310335, guid: 9a8bf3aa13c73474a9b0d3d61d84312e, type: 3}
   dialogueKid:
     name: Timmy
@@ -1990,6 +1994,9 @@ MonoBehaviour:
     - "Yeah but- Doc there\u2019s gotta be a better way without pricking me with
       a needle!"
     - Practice run? Uhh, yeah sure.
+    - "Ow, ok, that practice run stung Doctor Pav, I don\u2019t know if I wanna-"
+    - "Wha- Oh, well that wasn\u2019t so bad."
+    - Can I see?
     profile: {fileID: -1908978240, guid: 803a7dc6b3c2f8649a12941a58d5884c, type: 3}
   dialogueParent:
     name: 

@@ -8,6 +8,7 @@ public class t_cellController : MonoBehaviour
     public float attackCooldown = 5;
     private GameObject player;
     Rigidbody2D rb;
+    private float randSpeed;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
@@ -15,18 +16,16 @@ public class t_cellController : MonoBehaviour
         float lifespan = 5;
         player = GameObject.FindWithTag("Player");
 
-        float randx = (Random.value * (enemySpeed * 2)) - enemySpeed;
-        float randy = (Random.value * (enemySpeed * 2)) - enemySpeed;
-
         rb = GetComponent<Rigidbody2D>();
         rb.AddForce(player.transform.position.normalized * enemySpeed, ForceMode2D.Impulse);
         StartCoroutine(DestroyTcell(lifespan));
+        randSpeed = (Random.value * Time.deltaTime * enemySpeed);
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-
+        rb.MovePosition(Vector3.MoveTowards(rb.position, player.GetComponent<Rigidbody2D>().position, randSpeed));
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

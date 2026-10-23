@@ -6,21 +6,21 @@ namespace PinePie.SimpleJoystick.Examples.DemoScript
     {
         private JoystickController joystickController;
         public float moveSpeed = 5f;
-    
+
         void Start()
         {
-            JoystickController[] joysticks = FindObjectsOfType<JoystickController>();
+            JoystickController[] joysticks = FindObjectsByType<JoystickController>(FindObjectsSortMode.None);
             foreach (var joystick in joysticks)
             {
                 if (joystick.name == "PinePie Joystick") joystickController = joystick;
             }
         }
-    
+
         void Update()
         {
             transform.position +=
                 moveSpeed * Time.deltaTime * (Vector3)joystickController.InputDirection;
         }
     }
-    
+
 }

@@ -1,7 +1,6 @@
 using PinePie.SimpleJoystick;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
 
 public class playerController : MonoBehaviour
 {
@@ -12,12 +11,17 @@ public class playerController : MonoBehaviour
     public InputActionReference move;
     private JoystickController joystickController;
     Rigidbody2D rb;
-    public int health = 5;
+    public int health = 8;
+
+    public bool paused = false;
+
+    public GameObject GameOverScreen;
 
     private void Start()
     {
+        Time.timeScale = 1f;
         rb = GetComponent<Rigidbody2D>();
-
+        GameOverScreen.SetActive(false);
         JoystickController[] joysticks = FindObjectsByType<JoystickController>(FindObjectsSortMode.None);
         foreach (var joystick in joysticks)
         {
@@ -43,10 +47,12 @@ public class playerController : MonoBehaviour
         {
             if (health <= 0)
             {
-                SceneManager.LoadScene("GameOver");
+                GameOverScreen.SetActive(true);
+                paused = true;
+                Time.timeScale = 0f;
             }
             Debug.Log("Took Hit");
-            transform.localScale /= 1.5f;
+            transform.localScale /= 1.3f;
             health--;
 
         }
