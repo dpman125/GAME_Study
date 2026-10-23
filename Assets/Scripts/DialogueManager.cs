@@ -1,40 +1,65 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
     public List<string> sentences;
-    public TextMeshProUGUI name;
+    public TextMeshProUGUI nameLabel;
     public TextMeshProUGUI dialogueText;
     public Image profile;
+
+    public Dialogue dialoguePavG, dialogueKidG, dialogueParentG;
+
+    public int sceneFlag = 0;
+
+    public GameObject mainMenu, fingerPrick;
+
+    private bool isFingerPricked = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Start()
     {
         sentences = new List<string>();
     }
+    public void Update()
+    {
+        if (isFingerPricked)
+        {
+            fingerPrick.transform.localScale = new Vector3(5f * Time.deltaTime, 5f * Time.deltaTime, 0f);
+
+        }
+    }
 
     public void StartDialogue1(Dialogue dialoguePav, Dialogue dialogueKid, Dialogue dialogueParent)
     {
-        profile.sprite = dialoguePav.profile;
-        name.text = dialoguePav.name;
+        profile.sprite = dialogueKid.profile;
+        nameLabel.text = dialogueKid.name;
         sentences.Clear();
-
-        for (int i = 0; i < dialoguePav.sentences.Length; i++)
+        // if first scene, remove main menu
+        // queue up Pav and Kid Dialouge for pt 1
+        // new parts for dialogue will be added later
+        if (sceneFlag == 0)
         {
-            Enqueue(dialoguePav.sentences[i]);
-            Enqueue(dialogueKid.sentences[i]);
-            Debug.Log("setnence " + i + ": " + dialoguePav.sentences[i]);
+            mainMenu.SetActive(false);
+            for (int i = 0; i < dialoguePav.sentences.Length; i++)
+            {
+                Enqueue(dialoguePav.sentences[i]);
+                Enqueue(dialogueKid.sentences[i]);
+                Debug.Log("setnence " + i + ": " + dialoguePav.sentences[i]);
+            }
+            dialoguePavG = dialoguePav;
+            dialogueKidG = dialogueKid;
+            DisplayNextSentence();
         }
-        DisplayNextSentence(dialoguePav, dialogueKid);
 
     }
 
-    public void DisplayNextSentence(Dialogue dialogue1, Dialogue dialogue2)
+    public void DisplayNextSentence()
     {
-        swapProfile(dialogue1, dialogue2);
+        swapProfile(dialoguePavG, dialogueKidG);
         if (sentences.Count <= 0)
         {
             Debug.Log("sentences is empty");
@@ -43,17 +68,37 @@ public class DialogueManager : MonoBehaviour
         }
         // pops next sentence from queue into current sentence
         string curSentence = Dequeue();
+        dialogueText.text = curSentence;
         Debug.Log("true sentence: " + curSentence);
     }
 
     private void swapProfile(Dialogue dialogue1, Dialogue dialogue2)
     {
-
+        if (nameLabel.text == dialogue1.name)
+        {
+            nameLabel.text = dialogue2.name;
+            profile.sprite = dialogue2.profile;
+        }
+        else if (nameLabel.text == dialogue2.name)
+        {
+            nameLabel.text = dialogue1.name;
+            profile.sprite = dialogue1.profile;
+        }
+        else
+        {
+            Debug.LogError("swap profile exception. name comparison was invalid");
+        }
     }
 
     void EndDialogue()
     {
         Debug.Log("end of conversation");
+
+        if (sceneFlag == 0)
+        {
+            StartCoroutine(Transition1());
+
+        }
     }
     public void Enqueue(string sentence)
     {
@@ -64,5 +109,13 @@ public class DialogueManager : MonoBehaviour
         string temp = sentences[0];
         sentences.RemoveAt(0);
         return temp;
+    }
+    IEnumerator<UnityEngine.WaitForSeconds> Transition1()
+    {
+        fingerPrick.SetActive(true);
+        yield return new WaitForSeconds(2f);
+
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("BetaCellUI");
     }
 }

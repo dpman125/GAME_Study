@@ -39,13 +39,13 @@ public class t_cellController : MonoBehaviour
     }
     IEnumerator DestroyTcell(float lifespan)
     {
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < attackCooldown; i++)
         {
-            yield return new WaitForSeconds(attackCooldown);
+            yield return new WaitForSeconds(3);
             rb.AddForce(player.transform.position.normalized * enemySpeed, ForceMode2D.Impulse);
         }
-
         Destroy(gameObject);
+
     }
 }
 
