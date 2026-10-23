@@ -165,7 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Pt2UI_Manager
   timerText: {fileID: 0}
   timerTextLive: {fileID: 0}
-  ignoreTimer: 0
+  ignoreTimer: 1
 --- !u!1 &533211902
 GameObject:
   m_ObjectHideFlags: 0
@@ -965,14 +965,14 @@ PrefabInstance:
     - target: {fileID: 1653490108583921266, guid: 6e404f87223a0a0419faf3acdc234e65, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 508037946}
     - target: {fileID: 1653490108583921266, guid: 6e404f87223a0a0419faf3acdc234e65, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: replay
       objectReference: {fileID: 0}
     - target: {fileID: 1653490108583921266, guid: 6e404f87223a0a0419faf3acdc234e65, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Pt1UI_Manager, Assembly-CSharp
+      value: Pt2UI_Manager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3404135152294964708, guid: 6e404f87223a0a0419faf3acdc234e65, type: 3}
       propertyPath: m_Name

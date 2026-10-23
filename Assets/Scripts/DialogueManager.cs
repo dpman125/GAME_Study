@@ -22,10 +22,7 @@ public class DialogueManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Start()
     {
-        if (sceneFlag == 1)
-        {
-            StartDialogue1(dialoguePavG, dialogueKidG, dialogueParentG);
-        }
+        Time.timeScale = 1f;
         sentences = new List<string>();
     }
     public void Update()
@@ -77,6 +74,7 @@ public class DialogueManager : MonoBehaviour
     public void DisplayNextSentence()
     {
         swapProfile(dialoguePavG, dialogueKidG);
+        Debug.Log("sentenceCount: " + sentences.Count);
         if (sentences.Count <= 0)
         {
             Debug.Log("sentences is empty");

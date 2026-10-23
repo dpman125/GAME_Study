@@ -2,15 +2,19 @@ using UnityEngine;
 
 public class Pt2_GameManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public CellManager[] cellList;
+
+    int CellsCompleted;
+    int looseGlucose;
+
+
+    public void CellCompleted()
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public void checkBlood()
     {
-        
+
     }
 }

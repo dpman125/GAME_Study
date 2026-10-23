@@ -1997,6 +1997,7 @@ MonoBehaviour:
     - "Ow, ok, that practice run stung Doctor Pav, I don\u2019t know if I wanna-"
     - "Wha- Oh, well that wasn\u2019t so bad."
     - Can I see?
+    - Sweet!
     profile: {fileID: -1908978240, guid: 803a7dc6b3c2f8649a12941a58d5884c, type: 3}
   dialogueParent:
     name: 

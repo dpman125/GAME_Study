@@ -11,6 +11,7 @@ public class MoleculeSpawner : MonoBehaviour
 
     private void Start()
     {
+        StartCoroutine(IncreaseSpawnRate());
         StartCoroutine(SpawnGlucose());
 
     }
@@ -37,6 +38,14 @@ public class MoleculeSpawner : MonoBehaviour
         }
         yield return new WaitForSeconds(spawnDelay);
         StartCoroutine(SpawnGlucose());
+
+    }
+
+    IEnumerator IncreaseSpawnRate()
+    {
+        yield return new WaitForSeconds(10);
+        spawnDelay *= .9f;
+        StartCoroutine(IncreaseSpawnRate());
 
     }
 }

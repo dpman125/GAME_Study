@@ -143,6 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CellManager
   need: 5
+  scoreTxt: {fileID: 3021851095028856110}
 --- !u!1 &1608580970608554058
 GameObject:
   m_ObjectHideFlags: 0
