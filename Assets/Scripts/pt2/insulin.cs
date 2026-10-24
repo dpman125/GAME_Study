@@ -2,25 +2,24 @@ using UnityEngine;
 
 public class insulin : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    public Pt2_GameManager gameManager;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // destroys lock(transport protien) and key(insulin)
         if (collision.CompareTag("CellLock"))
         {
+            //removes insulin from bloodStream before destroying the lock and itself
+            gameManager.checkBlood(0, -1);
             Destroy(collision.gameObject);
             Destroy(gameObject);
         }
+    }
+
+    // gameManager initialized externally
+    public void Initialize(Pt2_GameManager manager)
+    {
+        gameManager = manager;
     }
 }

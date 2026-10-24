@@ -10,7 +10,7 @@ public class DialogueEditor : MonoBehaviour
     private void Start()
     {
         dm = GetComponent<DialogueManager>();
-        if (dm.sceneFlag == 1)
+        if (dm.sceneFlag != 0)
         {
             TriggerDialogue();
         }

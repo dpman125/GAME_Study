@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 public class t_cellController : MonoBehaviour
@@ -13,13 +12,11 @@ public class t_cellController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
-        float lifespan = 5;
         player = GameObject.FindWithTag("Player");
 
         rb = GetComponent<Rigidbody2D>();
         rb.AddForce(player.transform.position.normalized * enemySpeed, ForceMode2D.Impulse);
-        StartCoroutine(DestroyTcell(lifespan));
-        randSpeed = (Random.value * Time.deltaTime * enemySpeed);
+        randSpeed = (Random.Range(enemySpeed - 2, enemySpeed + 2) * Time.deltaTime);
     }
 
     // Update is called once per frame
@@ -35,16 +32,6 @@ public class t_cellController : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-    IEnumerator DestroyTcell(float lifespan)
-    {
-        for (int i = 0; i < attackCooldown; i++)
-        {
-            yield return new WaitForSeconds(3);
-            rb.AddForce(player.transform.position.normalized * enemySpeed, ForceMode2D.Impulse);
-        }
-        Destroy(gameObject);
-
     }
 }
 

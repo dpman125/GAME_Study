@@ -45,28 +45,17 @@ public class DialogueManager : MonoBehaviour
         if (sceneFlag == 0)
         {
             mainMenu.SetActive(false);
-            for (int i = 0; i < dialoguePav.sentences.Length; i++)
-            {
-                Enqueue(dialoguePav.sentences[i]);
-                Enqueue(dialogueKid.sentences[i]);
-                Debug.Log("setnence " + i + ": " + dialoguePav.sentences[i]);
-            }
-            dialoguePavG = dialoguePav;
-            dialogueKidG = dialogueKid;
-            DisplayNextSentence();
         }
-        else if (sceneFlag == 1)
+        for (int i = 0; i < dialoguePav.sentences.Length; i++)
         {
-            for (int i = 0; i < dialoguePav.sentences.Length; i++)
-            {
-                Enqueue(dialoguePav.sentences[i]);
-                Enqueue(dialogueKid.sentences[i]);
-                Debug.Log("setnence " + i + ": " + dialoguePav.sentences[i]);
-            }
-            dialoguePavG = dialoguePav;
-            dialogueKidG = dialogueKid;
-            DisplayNextSentence();
+            Enqueue(dialoguePav.sentences[i]);
+            Enqueue(dialogueKid.sentences[i]);
+            Debug.Log("setnence " + i + ": " + dialoguePav.sentences[i]);
         }
+        dialoguePavG = dialoguePav;
+        dialogueKidG = dialogueKid;
+        DisplayNextSentence();
+
 
     }
 
