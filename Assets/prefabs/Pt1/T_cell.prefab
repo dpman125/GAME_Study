@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47741ebdd056d9d429ce09c93b6db601, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::t_cellController
-  enemySpeed: 10
+  enemySpeed: 15
   attackCooldown: 60
 --- !u!50 &119122524359061653
 Rigidbody2D:

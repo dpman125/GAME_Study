@@ -1169,6 +1169,30 @@ PrefabInstance:
       propertyPath: m_text
       value: Try Again
       objectReference: {fileID: 0}
+    - target: {fileID: 1653490108583921266, guid: 6e404f87223a0a0419faf3acdc234e65, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 742626749}
+    - target: {fileID: 1653490108583921266, guid: 6e404f87223a0a0419faf3acdc234e65, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: continueOn
+      objectReference: {fileID: 0}
+    - target: {fileID: 1653490108583921266, guid: 6e404f87223a0a0419faf3acdc234e65, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Pt2UI_Manager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3058385163005648595, guid: 6e404f87223a0a0419faf3acdc234e65, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 742626749}
+    - target: {fileID: 3058385163005648595, guid: 6e404f87223a0a0419faf3acdc234e65, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: replay
+      objectReference: {fileID: 0}
+    - target: {fileID: 3058385163005648595, guid: 6e404f87223a0a0419faf3acdc234e65, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Pt2UI_Manager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 3404135152294964708, guid: 6e404f87223a0a0419faf3acdc234e65, type: 3}
       propertyPath: m_Name
       value: HyperScreen
@@ -1199,6 +1223,34 @@ PrefabInstance:
     - target: {fileID: 4628576959440855057, guid: 6e404f87223a0a0419faf3acdc234e65, type: 3}
       propertyPath: m_text
       value: Game Over
+      objectReference: {fileID: 0}
+    - target: {fileID: 8998782853173717352, guid: 6e404f87223a0a0419faf3acdc234e65, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8998782853173717352, guid: 6e404f87223a0a0419faf3acdc234e65, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8998782853173717352, guid: 6e404f87223a0a0419faf3acdc234e65, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 742626749}
+    - target: {fileID: 8998782853173717352, guid: 6e404f87223a0a0419faf3acdc234e65, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8998782853173717352, guid: 6e404f87223a0a0419faf3acdc234e65, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LearnMore
+      objectReference: {fileID: 0}
+    - target: {fileID: 8998782853173717352, guid: 6e404f87223a0a0419faf3acdc234e65, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Pt2UI_Manager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8998782853173717352, guid: 6e404f87223a0a0419faf3acdc234e65, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -1354,6 +1406,7 @@ GameObject:
   - component: {fileID: 742626747}
   - component: {fileID: 742626746}
   - component: {fileID: 742626748}
+  - component: {fileID: 742626749}
   m_Layer: 0
   m_Name: MoleculeSpawner
   m_TagString: Untagged
@@ -1419,13 +1472,24 @@ MonoBehaviour:
   - {fileID: 243576830}
   WinScreen: {fileID: 1793104901}
   HyperScreen: {fileID: 2092209081}
-  PlayerHud: {fileID: 883214378}
   BloodSugarText: {fileID: 227318912}
   MonitorBackground: {fileID: 43645082}
   cellsCompleted: 0
   looseGlucose: 0
   looseInsulin: 0
   bloodSugar: 100
+--- !u!114 &742626749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742626745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81d281f69ffaab4458bb327fe0492d42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Pt2UI_Manager
 --- !u!1 &746478945
 GameObject:
   m_ObjectHideFlags: 0
@@ -3406,6 +3470,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 144607907441879439, guid: 6e404f87223a0a0419faf3acdc234e65, type: 3}
+      propertyPath: m_text
+      value: Play Again
+      objectReference: {fileID: 0}
+    - target: {fileID: 1653490108583921266, guid: 6e404f87223a0a0419faf3acdc234e65, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 742626749}
+    - target: {fileID: 1653490108583921266, guid: 6e404f87223a0a0419faf3acdc234e65, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: continueOn
+      objectReference: {fileID: 0}
+    - target: {fileID: 1653490108583921266, guid: 6e404f87223a0a0419faf3acdc234e65, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Pt2UI_Manager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3058385163005648595, guid: 6e404f87223a0a0419faf3acdc234e65, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 742626749}
+    - target: {fileID: 3058385163005648595, guid: 6e404f87223a0a0419faf3acdc234e65, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: replay
+      objectReference: {fileID: 0}
+    - target: {fileID: 3058385163005648595, guid: 6e404f87223a0a0419faf3acdc234e65, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Pt2UI_Manager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 3404135152294964708, guid: 6e404f87223a0a0419faf3acdc234e65, type: 3}
       propertyPath: m_Name
       value: WinScreen
@@ -3421,6 +3513,34 @@ PrefabInstance:
     - target: {fileID: 4628576959440855057, guid: 6e404f87223a0a0419faf3acdc234e65, type: 3}
       propertyPath: m_text
       value: Victory!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8998782853173717352, guid: 6e404f87223a0a0419faf3acdc234e65, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8998782853173717352, guid: 6e404f87223a0a0419faf3acdc234e65, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8998782853173717352, guid: 6e404f87223a0a0419faf3acdc234e65, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 742626749}
+    - target: {fileID: 8998782853173717352, guid: 6e404f87223a0a0419faf3acdc234e65, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8998782853173717352, guid: 6e404f87223a0a0419faf3acdc234e65, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LearnMore
+      objectReference: {fileID: 0}
+    - target: {fileID: 8998782853173717352, guid: 6e404f87223a0a0419faf3acdc234e65, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Pt2UI_Manager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8998782853173717352, guid: 6e404f87223a0a0419faf3acdc234e65, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

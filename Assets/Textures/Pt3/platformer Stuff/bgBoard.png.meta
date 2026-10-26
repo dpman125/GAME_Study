@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0ba9f6b4ad4215743a7d0995696a0e5f
+guid: 134adf4f219f00847a470ccac9d168e5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -134,12 +134,56 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: bgBoard_0
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 556
+        width: 372
+        height: 280
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29dd84534b201244db8df24404be80d2
+      internalID: 2101570943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bgBoard_1
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 547
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d1aa7b13809ef64189ceb0cb4533b85
+      internalID: -1125398119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b1d378314ef919345a171b2962a20805
     internalID: 0
     vertices: []
     indices: 
@@ -147,8 +191,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
-    nameFileIdTable: {}
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      bgBoard_0: 2101570943
+      bgBoard_1: -1125398119
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

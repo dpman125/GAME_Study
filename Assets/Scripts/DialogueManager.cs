@@ -98,14 +98,7 @@ public class DialogueManager : MonoBehaviour
     {
         Debug.Log("end of conversation");
 
-        if (sceneFlag == 0)
-        {
-            StartCoroutine(Transition1());
-        }
-        else if (sceneFlag == 1)
-        {
-            StartCoroutine(Transition2());
-        }
+        StartCoroutine(Transition());
     }
     public void Enqueue(string sentence)
     {
@@ -117,18 +110,16 @@ public class DialogueManager : MonoBehaviour
         sentences.RemoveAt(0);
         return temp;
     }
-    IEnumerator<UnityEngine.WaitForSeconds> Transition1()
+    IEnumerator<UnityEngine.WaitForSeconds> Transition()
     {
         fingerPrick.SetActive(true);
         yield return new WaitForSeconds(4f);
 
-        SceneManager.LoadScene("BetaCellUI");
-    }
-    IEnumerator<UnityEngine.WaitForSeconds> Transition2()
-    {
-        fingerPrick.SetActive(true);
-        yield return new WaitForSeconds(4f);
-        SceneManager.LoadScene("InsulinUI");
+        if (sceneFlag == 0) SceneManager.LoadScene("BetaCellUI");
+        else if (sceneFlag == 1) SceneManager.LoadScene("InsulinUI");
+        else if (sceneFlag == 2) SceneManager.LoadScene("platformerUI");
+        else Debug.LogError("sceneFlag not set. Scene Transition failed");
+
     }
 
 }

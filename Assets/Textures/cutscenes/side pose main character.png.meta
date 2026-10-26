@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 134adf4f219f00847a470ccac9d168e5
+guid: 42796def4277f6648b8f3847394b8663
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -134,12 +134,34 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: side pose main character_0
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 22
+        width: 242
+        height: 569
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 769d9080406c63749b3c84e0b57463fc
+      internalID: 75760729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 6b62bad64d1ac364996d9c22073e56ed
     internalID: 0
     vertices: []
     indices: 
@@ -147,8 +169,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
-    nameFileIdTable: {}
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      side pose main character_0: 75760729
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

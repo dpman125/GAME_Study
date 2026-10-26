@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class platformerController : MonoBehaviour
 {
@@ -14,9 +15,20 @@ public class platformerController : MonoBehaviour
     public int bloodSugar;
     public bool doubleJump;
     public UIManager UIManager;
+
+    private SpriteRenderer sprite;
+
+    public int loseRange = 280;
+    public int dangerRange = 240;
+    public int warningRange = 180;
+
+    public Image MonitorBackground;
+    public GameObject GameOverScreen;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        sprite = GetComponent<SpriteRenderer>();
+        Time.timeScale = 1f;
     }
 
     public void handleLeftInput()
@@ -41,10 +53,29 @@ public class platformerController : MonoBehaviour
     }
     private void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            direction = 1;
+        }
+        else if (Input.GetKeyDown(KeyCode.A))
+        {
+            direction = -1;
+        }
+
+        if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.A))
+        {
+            direction = 0;
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Jump();
+        }
         if (direction != 0)
         {
             Vector3 move = new Vector3(direction * walkSpeed * Time.deltaTime, 0f, 0f);
             transform.Translate(move);
+            sprite.flipX = direction > 0f ? true : false;
         }
         Debug.Log(rb.linearVelocityY);
         if (rb.linearVelocityY < 0.01f && rb.linearVelocityY > -0.01f)
@@ -54,6 +85,25 @@ public class platformerController : MonoBehaviour
         else
         {
             isOnGround = false;
+        }
+    }
+    public void checkBlood()
+    {
+        if (bloodSugar > loseRange)
+        {
+            GameOver();
+        }
+        else if (bloodSugar >= dangerRange)
+        {
+            MonitorBackground.color = Color.orangeRed;
+        }
+        else if (bloodSugar >= warningRange)
+        {
+            MonitorBackground.color = Color.yellow;
+        }
+        else
+        {
+            MonitorBackground.color = Color.limeGreen;
         }
     }
 
@@ -75,8 +125,12 @@ public class platformerController : MonoBehaviour
         else
         {
             bloodSugar += food.sugar;
+            checkBlood();
         }
-
-
+    }
+    private void GameOver()
+    {
+        Time.timeScale = 0f;
+        GameOverScreen.SetActive(true);
     }
 }

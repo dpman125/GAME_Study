@@ -1,19 +1,11 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Pt2UI_Manager : MonoBehaviour
 {
 
-    private float currentTime;
-    [SerializeField] private TextMeshProUGUI timerText;
-    [SerializeField] private TextMeshProUGUI timerTextLive;
-    private playerController pc;
-    public bool ignoreTimer = false;
-
     void Start()
     {
-        currentTime = 0;
 
 
     }
@@ -22,13 +14,21 @@ public class Pt2UI_Manager : MonoBehaviour
     void Update()
     {
     }
-    public void replay()
+    public void play()
     {
         SceneManager.LoadScene("Insulin");
+    }
+    public void replay()
+    {
+        SceneManager.LoadScene("InsulinUI");
     }
 
     public void continueOn()
     {
         SceneManager.LoadScene("CutScene3");
+    }
+    public void LearnMore()
+    {
+        SceneManager.LoadScene("Info");
     }
 }

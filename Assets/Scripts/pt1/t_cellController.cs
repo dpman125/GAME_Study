@@ -22,7 +22,7 @@ public class t_cellController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        rb.MovePosition(Vector3.MoveTowards(rb.position, player.GetComponent<Rigidbody2D>().position, randSpeed));
+        rb.MovePosition(Vector3.MoveTowards(rb.position, player.GetComponent<Rigidbody2D>().position, enemySpeed * Time.deltaTime));
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
