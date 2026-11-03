@@ -24,11 +24,14 @@ public class platformerController : MonoBehaviour
 
     public Image MonitorBackground;
     public GameObject GameOverScreen;
+
+    public Pt3UI_Manager UIManager3;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
         Time.timeScale = 1f;
+        checkBlood();
     }
 
     public void handleLeftInput()
@@ -120,7 +123,7 @@ public class platformerController : MonoBehaviour
     {
         if (food.recipie)
         {
-
+            UIManager3.UpdateRecipeBook();
         }
         else
         {
@@ -132,5 +135,11 @@ public class platformerController : MonoBehaviour
     {
         Time.timeScale = 0f;
         GameOverScreen.SetActive(true);
+    }
+
+    public void administerInsulin(int amount)
+    {
+        bloodSugar -= amount;
+        checkBlood();
     }
 }
